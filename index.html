@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jacquard+24&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    font-family: "Roboto Mono", monospace;
+    /* background-color: rgb(249, 183, 194); */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: black;
+    --second-bg-color:rgb(123, 78, 117);
+    --text-color:white;
+    --main-color: purple;
+    --diff-color:rgb(68, 19, 68);
+    --hovering-color:rgb(215, 197, 180);
+    --nav-color:rgba(0,0,0,0.7);
+    
+}
+.light-theme{
+    --nav-color:rgba(255, 255, 255, 0.734);
+    --bg-color:white;
+    --text-color:black;
+    --hovering-color:lightblue;
+    --main-color: rgb(32, 32, 183);
+    --diff-color:#4f69eb;
+    --second-bg-color:rgb(53, 207, 246);
+}
+/* html{
+    font-size: 55%;
+    overflow-x:hidden ;
+} */
+body{
+    background-color: var(--bg-color);
+    width: 100vw;
+    font-family: "Roboto Mono", monospace;
+}
+/* html::-webkit-scrollbar-track{
+    background-color: var(--bg-color);
+}
+html::-webkit-scrollbar{
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+} */
+.heading{
+    font-size: 4rem;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 1rem 8rem;
+    background-color:var(--nav-color) ;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  
+}
+.logo{
+    font-size: 1.8rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: grabbing;
+    transition: 0-5s ease;
+    margin-left: -5rem;
+}
+.logo:hover{
+    transform: scale(1.3);
+}
+.navbar1{
+    display: none;
+}
+.navbar a{
+font-size: 1rem;
+color: var(--text-color);
+margin-left: 2rem;
+font-weight: 500;
+transition: 0.3s ease;
+border-bottom: 3px solid transparent;
+}
+.navbar a:hover, .navbar a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+.header .fa-solid{
+    display: none;
+    color: var(--text-color);
+}
+#abtn:hover{
+    color: white;
+}
+
+
+@media (max-width: 995px) {
+    .menu-icon{
+        display: block;
+        border: 2px solid red;
+    }
+    .fa-solid fa-bars{
+        font-size: 3.6rem;
+         color: var(--main-color);
+        display: none;
+        cursor: pointer;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .navbar a:hover, .navbar a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--main-color);
+    }
+}
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    color: var(--text-color);
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: var(--bg-color);
+
+}
+.home .home-content h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    font-weight: 500;
+    width: max-content;
+}
+span{
+    color: var(--main-color);
+}
+.home-content h3{
+font-size: 3rem;
+margin-bottom: 1rem;
+font-weight: 700;
+width: max-content;
+}
+
+.home-content p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.social-icon a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: 0.1rem solid var(--main-color);
+    font-size: 1rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 1.5rem 0.7rem 1.5rem 0;
+    transition: 0.3s ease;
+}
+.social-icon a:hover{
+    color: white;
+    transform: scale(1.3)translateY(-5px);
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding:0.5rem 2rem;
+    background: var(--bg-color);
+    border-radius: 4rem;
+    font-size: 1rem;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.03);
+    background-color: var(--main-color);
+    color: var(--text-color);
+}
+.home-text{
+    margin-top: 4rem;
+}
+
+@media (max-width:1000px) {
+    .home{
+        gap:4rem;
+    } 
+}
+@media (max-width:995px) {
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-img img{
+        width: 70vw;
+        margin-top: -15rem;
+    }
+}
+
+
+/* services */
+
+.services{
+    background: var(--second-bg-color);
+}
+.heading{
+font-size: 2rem;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+ 
+}
+.service-box{
+    background-color: var(--diff-color);
+    padding: 1.5rem 1rem 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 1rem;
+    border: none;
+}
+.service-box:hover{
+    background-color: var(--hovering-color);
+    padding: 1.5rem 1rem 1rem;
+    color: var(--main-color);
+    transform: scale(1.03);
+    border: 1px solid transparent;
+}
+.service-box .service-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    
+}
+#a{
+    margin-top: -60px;
+}
+#a:hover{
+    margin-top: -60px;
+}
+.service-info h4{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.service-info p{
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--text-color);
+}
+.service-button{
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+.service-button:hover .service_icon{
+transform: translateX(1.25rem);
+}
+.service_icon{
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+.service_modal{
+    position: fixed;
+    background-color: rgb(220, 215, 212);    
+    padding: 2rem 1rem;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;   
+}
+.service_modal-content{
+    position: relative;
+    background-color: rgb(220, 215, 212);  
+    color: var(--main-color);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    margin-top: 0rem;
+}
+.service_modal-title,.service_modal-desc{
+    text-align: center;
+
+}
+.service_modal-title{
+    font-size: 1.2rem;
+    text-align: start;
+   
+}
+.service_modal-desc{
+    margin-top: 0.5rem;
+   display: grid;
+   row-gap: 0.5rem;
+   text-align: start;
+}
+.service_modal-list{
+    row-gap: 0.5rem;
+}
+.service_modal-item{
+    display: flex;
+    align-items: flex-start;
+    column-gap: 0.1rem;
+}
+.service_modal-icon {
+    font-size: 0.8rem;
+}
+.service_modal-info{
+    font-size: 0.7rem;
+}
+.service_modal-close{
+    position: absolute;
+    top: 0.7rem;
+    right: 0.1rem;
+    /* padding: 10px 10px; */
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.service_modal-close:hover{
+    position: absolute;
+    font-size: 15px;
+    top: 0.7rem;
+    right: 0.1rem;
+    /* padding: 10px 10px; */
+   color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.active-modal{
+    opacity: 1;
+    visibility: visible;
+}
+@media (max-width:991px) {
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .services{
+        padding-bottom: 7rem;
+    }
+}
+@media(max-width:895px){
+    .services h2{
+        margin-bottom: 3rem;
+    }
+    .services-container{
+        grid-template-columns: repeat(1,1fr);
+       
+    }
+}
+/* skills */
+.skills{
+    background-color: var(--bg-color);
+}
+.skills .container{
+    background-color: #fff;
+    background-color: var(--diff-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    padding: 1.1rem;
+    width:60%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.skills .container .row{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.skills .container .bar{
+    margin-bottom: 0.5rem;
+    padding: 10px;
+    border-radius: 0.5rem;
+    background-color: var(--second-bg-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.i1{
+    height: 50px;
+    width: 55px;
+}
+.skills .container .bar:hover{
+    box-shadow: 0 4px 15px var(--main-color);
+    transform: scale(1.1);
+}
+.skills .container .bar .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.skills .container .bar .info span{
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    color: var(--text-color);
+}
+/* education */
+.education{
+    background-color: var(--second-bg-color);
+    cursor: pointer;
+}
+.education .timeline{
+position: relative;
+/* max-width: 1200px; */
+max-width: 100vw;
+margin: 0 auto;
+
+}
+.right-left-container{
+    display: flex;
+}
+.education .timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgb(241, 227, 238);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -2px;
+}
+.education .container{
+    position: relative;
+    background-color: inherit;
+    padding: 2rem;
+    width: 50%;
+}
+.education .content{
+    background-color: var(--diff-color);
+    position: relative;
+    border-radius: 6px;
+    /* margin: 2rem; */
+    margin-bottom: 1rem;
+    transition: 0.3s ease;
+}
+.education .content:hover{
+    box-shadow: 0 4px 15px var(--hovering-color);
+    transform: scale(1.1);
+}
+.education .content .tag{
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+.education .content .decs{
+    margin-left: 1rem;
+    margin-right: 0.4rem;
+    padding-bottom: 1rem;
+}
+.education .content .tag h2{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 5px;
+}
+.education .content .decs p{
+    font-size: 0.67rem;
+    font-weight: 500;
+}
+@media screen and (max-width:600px) {
+    .education .timeline{
+        margin-top: 2rem;
+    }
+    .education .timeline::after{
+        left: 31px;
+    }
+    .education .container{
+        width: 100%;
+        padding-left: 8rem;
+        padding-right: 2rem;
+    }
+    .education .container::after{
+        font-size: 2.2rem;
+    }
+}
+
+/* footer */
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 50px 0;
+}
+.footer .social a{
+   font-size: 25px;
+    color: var(--text-color);
+    border: 2px solid black;
+    width: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+.footer .social a:hover{
+    transform: scale(1.2) translateY(-5px);
+    background-color:var(--text-color);
+    color: var(--main-color);
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: var(--text-color);
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--text-color);
+}
+.footer .copyright{
+    margin-top: -5px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+.footer .social-icon{
+    display: flex;
+    justify-content: center;
+}
+.footer h1{
+    color: var(--second-bg-color);
+    font-size: 1.8rem;
+    margin-top: -2rem;
+}
+/* contact */
+.contact{
+    background-color: var(--second-bg-color);
+}
+.contact_container{
+    row-gap: 2rem;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    display: flex;
+    justify-content: space-evenly;
+   margin-top: 50px;
+}
+.contact_subtitle{
+    font-size: 1rem;
+}
+.contact_text{
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    background-color:var(--diff-color);
+    color: var(--text-color);
+}
+.contact_inputs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1rem;
+}
+.contact_form{
+    width: 500px;
+}
+.contact_input{
+    width: 100%;
+    padding: 0.5rem;
+    outline: none;
+    border: 1.5px solid var(--text-color);
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    border-radius: 0.5rem;
+}
+.contact_button{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.982);
+    color: grey;
+    border-radius: 0.5rem;
+    outline: 2px solid transparent;
+    font-size: 0.8rem;
+    cursor: pointer;
+   padding: 0.5rem 1.5rem;
+   margin-left: auto;
+   transition: 0.3s ease;
+}
+.contact_button:hover{
+    transform: scale(1.05);
+    background-color: var(--diff-color);
+    color: var(--text-color);
+}
+
+/* about me */
+.about_me{
+    margin-top: 0px;
+    margin-left: -5px;
+}
+.about_me .service_modal-desc{
+    margin-bottom:25px;
+    font-size: 1rem;
+}
+
+.about_me{
+    position: absolute;
+    background-color: rgb(220, 215, 212);    
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+    width: 75%;
+    height: max-content;
+    margin-top: -370px;
+    /* border-radius: 2.5rem; */
+}
+.active-modal1{
+    opacity: 1;
+    visibility: visible;
+}
+/* resume */
+.btn .btn-2{
+    display: inline-block;
+}
+.resume .btn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 11rem;
+   height: 2.5rem;
+    margin: auto;
+    background: var(--bg-color);
+    font-size: 0.8rem;
+    color: var(--main-color);
+    border: 3px solid var(--main-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.resume .btn-2 {
+    margin-top: 10px;
+}
+.resume .btn-3{
+    margin-top: 15px;
+}
+.resume .btn:hover{
+    transform: scale(1.03);
+    background-color: var(--main-color);
+    color: var(--text-color);
+}
+.style-switcher {
+  position: fixed;
+  right: -110px;
+  top: 20px;
+  color: var(--text-color);
+  width: 180px;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+.style-switcher .moon-icons {
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.style-switcher .moon-icons:hover {
+  background-color: #aea0a0;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+
+/* small screen */
+@media only screen and (max-width: 500px) {
+  .header .fa-solid {
+    display: block;
+    width: fit-content;
+    font-size: 3rem;
+    margin-top: 1rem;
+    /* margin-right: 640px; */
+  }
+  .logo {
+    display: none;
+  }
+  header {
+    height: 10vh;
+    padding: 50px;
+    width: 200vw;
+  }
+  #moon{
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+.style-switcher .moon-icons:hover {
+  background-color: transparent;
+}
+  .home {
+    height: 100vh;
+  }
+  .home-text{
+    margin-left: 27rem;
+  }
+ 
+  .home .home-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home .home-content h3 {
+    font-size: 2.5rem;
+    margin-left: -0.5rem;
+  }
+  .home-content p {
+    font-size: 1.2rem;
+  }
+  .home .social-icon {
+    font-size: 2rem;
+  }
+  .services {
+    width: 210vw;
+   
+  }
+  .about_me {
+    width: 170%;
+    height: max-content;
+    margin-top: -500px;
+    margin-left: 22rem;
+  }
+.heading{
+    font-size: 3rem;
+}
+.service-info h4 {
+    font-size: 1.5rem;
+   
+}
+.service-info p{
+    font-size: 1rem;
+}
+.service-button{
+    font-size: 1.3rem;
+}
+.service_icon {
+    font-size: 1.3rem;
+
+}
+
+  .services-container {
+    width: 75%;
+    margin-left: 6rem;
+  }
+  .skills .container {
+    width: 135%;
+    margin-left: 15%;
+  }
+  .skills .heading{
+    margin-left: 18rem;
+  }
+  .education {
+    width: 165vw;
+  }
+  .right-left-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: -70px;
+  }
+  .timeline::after {
+    display: none;
+  }
+  .right {
+    margin-top: -40px;
+  }
+  .heading {
+    margin-top: 20px;
+  }
+  .skills .container .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+  .resume .heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact {
+    width: 165vw;
+  }
+  .contact .contact_subtitle {
+    font-size: 1.5rem;
+  }
+  .contact .contact_text {
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  .contact .contact_form {
+    width: 340px;
+    margin-right: 10px;
+  }
+  .contact .contact_button {
+    font-size: 1rem;
+  }
+  .footer .footer-title {
+    font-size: 2.5rem;
+    margin-left: 10px;
+  }
+  .footer ul li a {
+    font-size: 1.5rem;
+    margin-left: 27rem;
+  }
+  .footer .social-icon {
+    margin-right: -28rem;
+  }
+  .copyright {
+    margin-right: -25rem;
+  }
+  .resume {
+    margin-right: -200px;
+  }
+  .resume .btn-3 {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+  }
+  .navbar1 {
+    position: fixed;
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    visibility: hidden;
+    padding: 6rem;
+    left: 0;
+    top: -20px;
+    width: 146.9vw;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.712);
+  }
+
+  .navbar1 a:hover, .navbar1 a:active{
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--main-color);
+    }
+
+    .header nav {
+    visibility: hidden;
+  }
+  
+}
+@media only screen and (min-width: 501px) and (max-width:900px){
+    .header .fa-solid {
+    display: block;
+    width: fit-content;
+    font-size: 5rem;
+    margin-top: -6px;
+    margin-right: 640px;
+  }
+  .logo {
+    display: none;
+  }
+  header {
+    height: 10vh;
+    padding: 50px;
+    width: 200vw;
+  }
+  #moon{
+    padding: 10px;
+  }
+
+.style-switcher .moon-icons:hover {
+  background-color: transparent;
+}
+  .home {
+    height: 100vh;
+  }
+  .home-content {
+margin-left: 40rem;
+  }
+  .home .home-content h1 {
+    font-size: 7rem;
+  }
+
+  .home .home-content h3 {
+   font-size: 4rem;
+  }
+  .home-content p {
+   font-size: 2rem;
+  }
+  .home-img {
+    /* margin-left: 160px; */
+    width: 30%;
+    margin-top: 10rem;
+  }
+  .home .social-icon {
+    font-size: 3rem;
+  }
+  .services {
+    width: 170vw;
+   
+  }
+  .about_me {
+    width: 130%;
+    height: max-content;
+    margin-top: -580px;
+   
+  }
+  .service_modal-content{
+  height: max-content;
+  padding-bottom: 4em;
+  }
+ 
+  .services-container {
+    width: 75%;
+    margin-left: 160px;
+  }
+  .skills .container {
+    width: 120%;
+    margin-left: 15%;
+    margin-left: 20rem;
+  }
+  .skills .heading{
+    margin-left: 55rem;
+   
+  }
+  .education {
+    width: 170vw;
+  }
+  .right-left-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+    width: 200vw;
+  }
+  .timeline::after {
+    display: none;
+  }
+  .right {
+    margin-top: -40px;
+  }
+  .heading {
+    margin-top: -23px;
+  }
+  .skills .container .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+  .resume .heading {
+    margin-left: 30rem;
+  }
+  .contact {
+    width: 170vw;
+  }
+  .contact .contact_subtitle {
+    font-size: 1.7rem;
+  }
+  .contact .contact_text {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  .contact .contact_form {
+    width: 450px;
+  }
+  .contact .contact_button {
+    font-size: 1.2rem;
+  }
+  .footer .footer-title {
+    font-size: 2.7rem;
+    margin-left: 10px;
+  }
+  .footer ul li a {
+    font-size: 2rem;
+    margin-left: 45rem;
+  }
+  .footer .social-icon {
+    margin-right: -45rem;
+  }
+  .copyright {
+    margin-right: -43rem;
+  }
+  .resume {
+    margin-right: -200px;
+  }
+  .resume .btn-3 {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 58rem;
+  }
+  .resume .btn-2 {
+    margin-left: 58rem;
+  }
+  .navbar1 {
+    position: fixed;
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    visibility: hidden;
+    padding: 6rem;
+    left: 0;
+    top: -20px;
+    width: 146.9vw;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.712);
+  }
+
+  .navbar1 a:hover, .navbar1 a:active{
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--main-color);
+    }
+
+  .header nav {
+    /* margin-right: 280px; */
+    margin-top: 20px;
+  }
+  
+}
+
+
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Claudia</a>
+        <!-- <div class="icon-menu" onclick="small()"> -->
+            <div class="icon-menu" >
+        <i class="fa-solid fa-bars"  id="icon-menu"></i>
+    </div>
+        <nav class="navbar">
+            <a href="#" >Home</a>
+            <a href="#services" >Projects</a>
+            <a href="#skills" >Skills</a>
+            <a href="#education" >Education</a>
+            <a href="#experiece" >Resume</a>
+            <a href="#contact" >Contact</a>
+        </nav>
+        <nav class="navbar1" >
+            <a href="#" id="n1">Home</a>
+            <a href="#services" id="n2">Projects</a>
+            <a href="#skills" id="n3">Skills</a>
+            <a href="#education" id="n4">Education</a>
+            <a href="#experiece" id="n5">Resume</a>
+            <a href="#contact" id="n6" >Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-img">
+            <!-- <img src="/home.jpg" alt="home"> -->
+        </div>
+        <div class="home-content">
+            <!-- <h1>Hello,I'm <span>Claudia.</span></h1> -->
+            <div class="home-text">
+                <h1>Hello, I'm Claudia</h1>
+            <h3 class="typing-text"><span>Java Full Stack Developer.</span></h3>
+            <p>I'm passionate Java Full Stack Developer. I'm enthusiastic about the prospect of bringing my unique blend of skills and perspectives to the IT sector, and I look forward to the adventures that lie ahead!</p>
+            <div class="social-icon">
+                <a href="https://www.linkedin.com/in/kichano-claudia-humtsoe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/kichy99" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100004709688026" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="mailto:kclaudiahmt@gamil.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            <a href="tel:+91-8729892386"><i class="fa-solid fa-phone"></i></a>
+            </div>
+            <a href="#" class="btn" onclick="click1()">About Me</a>
+            </div>
+
+            
+            <div class="about_me" >
+                <div class="service_modal-content">
+                    <i class="fa-solid fa-x service_modal-close" id="close"></i>
+                    <h3 class="service_modal-title" >Introductory about me</h3>
+                    <p class="service_modal-desc">
+                        I'm Kichano Claudia Humtsoe from Nagaland.
+                        I Completed my Bachelor's Degree in the field of Civil Engineering from Mysore, Karnataka.
+                        Despite my engineering background, I have been enamored with the vast and ever-evolving field of infomation technology.
+                        My curiosity and eagerness to explore new horizons led
+                       me to recognize the immense potential and opportunities offered by the IT industry.
+                       Thus, I took the initiative to upskill myself and dive into the world of programming and software development.
+I am particularly drawn to the collaborative nature of software development, where creativity meets innovations. My background in civil engineering has instilled in me a strong analytical mindset, attention to detail, and a systematic approach to problem-solving, qualities that I believe are invaluable assets in the field of IT.
+In addition to technical skills, I bring to the table a passion for continuous learning, adaptability, and a drive to excel in every endeavor. 
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h2 class="heading">Projects</h2>
+
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Pet Store Online Shopping Plateform</h4>
+                    <span class="service-button">
+                        See more <i class="fa-solid fa-arrow-right service_icon"></i>
+                    </span>
+
+                    <div class="service_modal">
+                        <div class="service_modal-content">
+                            <i class="fa-solid fa-x service_modal-close"></i>
+                            <h3 class="service_modal-title">Pet Store Online Shopping Plateform</h3>
+                            <p class="service_modal-desc">
+                                Developed an online shopping platform to facilitate seamless browsing, purchasing, and management of items. 
+                                Key features include user management functionalities, item management, search functionality, filtering for displaying desired products and provided data Security for sensitive data and payements.
+                            </p>
+                            <ul class="service_modal-list">
+                                <li class="service_modal-item">
+                                    <i class="fa-solid fa-check service_modal-icon"></i>
+                                    <p class="service_modal-info">
+                                        Technologies used are JDBC, MySql, Java, JSP and Bootstrap.
+                                    </p>
+                                </li>
+                                <!-- <li class="service_modal-item">
+                                    <i class="fa-solid fa-check service_modal-icon"></i>
+                                    <p class="service_modal-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, illo.</p>
+                                </li>
+                                <li class="service_modal-item">
+                                    <i class="fa-solid fa-check service_modal-icon"></i>
+                                    <p class="service_modal-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, illo.</p>
+                                </li> -->
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Personal To-do List</h4>
+                    <span class="service-button">
+                        See more <i class="fa-solid fa-arrow-right service_icon"></i>
+                    </span>
+                    <div class="service_modal">
+                        <div class="service_modal-content">
+                            <i class="fa-solid fa-x service_modal-close"></i>
+                            <h3 class="service_modal-title">Personal To-do List</h3>
+                            <p class="service_modal-desc">
+                                Developed a functional to-do list with several functional components designed for a seamless user experience.Tasks can be added, marked as completed with a line-through effect, or removed, and the list’s state is preserved across sessions using localStorage. 
+                                Additionally, added more feautures like background changer, digital clock of 12-h format and random quote generator.
+                            </p>
+                            <ul class="service_modal-list">
+                                <li class="service_modal-item">
+                                    <i class="fa-solid fa-check service_modal-icon"></i>
+                                    <p class="service_modal-info">Designed using HTML, CSS and JavaScript</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Employee Management System</h4>
+                    <span class="service-button">
+                        See more <i class="fa-solid fa-arrow-right service_icon"></i>
+                    </span>
+                    <div class="service_modal">
+                        <div class="service_modal-content">
+                            <i class="fa-solid fa-x service_modal-close"></i>
+                            <h3 class="service_modal-title">Employee Management System</h3>
+                            <p class="service_modal-desc">
+                                Designed an Employee Management System which provides a comprehensive solution for managing employee information efficiently.The system offers functionalities for adding, updating, and deleting employee records, ensuring that all data is up-to-date and accurate. 
+                                This project aims to streamline HR processes, enhance data management capabilities, and improve overall organizational efficiency.
+                            </p>
+                            <ul class="service_modal-list">
+                                <li class="service_modal-item">
+                                    <i class="fa-solid fa-check service_modal-icon"></i>
+                                    <p class="service_modal-info">Technologies used are Hibernate, MySQL, Java, HTML and JSP.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-box" >
+                <div class="service-info">
+                    <h4>A Simple Calculator</h4>
+                    <span class="service-button">
+                        See more <i class="fa-solid fa-arrow-right service_icon"></i>
+                    </span>
+                    <div class="service_modal"id="a">
+                        <div class="service_modal-content">
+                            <i class="fa-solid fa-x service_modal-close"></i>
+                            <h3 class="service_modal-title">A Simple Calculator</h3>
+                            <p class="service_modal-desc">
+                                Designed a basic Calculator app where users can input numbers and perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
+                                The calculator evaluates the expression entered by the user and displays the result in real-time.
+                                It provides a user-friendly interface with responsive design for ease of use on different devices.
+                            </p>
+                            <ul class="service_modal-list">
+                                <li class="service_modal-item">
+                                    <i class="fa-solid fa-check service_modal-icon"></i>
+                                    <p class="service_modal-info">Designed using HTML, CSS and JavaScript.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <h2 class="heading">Skills</h2>
+        <div class="container">
+            <div class="row" id="skillsContainer">
+                <div class="bar">
+                    <div class="info">
+                        <img src="/html.png" alt="html" class="i1">
+                        <span>Html</span>
+                    </div>
+                </div>
+
+                <div class="bar">
+                    <div class="info">
+                        <img src="/JS.png" alt="JavaScript" class="i1">
+                        <span>JS</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/css.png" alt="css" class="i1">
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/bootstrap.png" alt="BS" class="i1">
+                        <span>BS</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/sql.png" alt="SQL" class="i1">
+                        <span>SQL</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/Mysql.png" alt="MYSQL" class="i1">
+                        <span>MySQL</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/core java.png" alt="jave" class="i1">
+                        <span>Java</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/sprring framework.png" alt="Spring" class="i1">
+                        <span>Spring</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/JSP.png" alt="JSP" class="i1">
+                        <span>JSP</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/servlet.png" alt="Servlet" class="i1">
+                        <span>Servlet</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="/FIgma.png" alt="figma" class="i1">
+                        <span>Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="education" id="education">
+        <h2 class="heading">My <span> Education</span></h2>
+        <div class="timeline" >
+          <div class="right-left-container">
+            <div class="container left">
+                <div class="content">
+                    <div class="tag">
+                        <h2>University</h2>
+                    </div>
+                    <div class="decs">
+                        <p>Graduated from The National Institute of Engineering, Mysore in the field of Civil Engineering.</p>
+                        <p>CGPA: 7.75</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tag">
+                        <h2>High School</h2>
+                    </div>
+                    <div class="decs">
+                        <p>Completed my Higher Secondary from Delhi Public School, Dimapur.</p>
+                        <p>CGPA: 8.6</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tag">
+                        <h2>School</h2>
+                    </div>
+                    <div class="decs">
+                        <p>Completed my schooling from Delhi Public School, Dimapur.</p>
+                        <p>CGPA: 8.4</p>
+                    </div>
+                </div>
+            </div>
+                <div class="container right">
+                    <div class="content">
+                        <div class="tag">
+                            <h2>Internship</h2>
+                        </div>
+                        <div class="decs">
+                            <p>on process... </p>
+                        </div>
+                    </div>
+                </div>
+          </div>
+    
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume" id="experiece">
+        <h2 class="heading">My <span>Resume</span></h2>
+        <a href="https://drive.google.com/file/d/1t8n5zTwwqNYoY2g4qKPt3ZSjHXs50mVR/view?usp=sharing" class="btn btn-3" target="_blank">View CV</a>
+       <a href="https://drive.usercontent.google.com/u/0/uc?id=1t8n5zTwwqNYoY2g4qKPt3ZSjHXs50mVR&export=download"  class="btn btn-2">Download CV</a>
+       
+    </section>
+    <section class="contact" id="contact">
+<h2 class="heading">Contact <span>Me</span></h2>
+<div class="contact_container">
+    <!-- <div class="social-icon">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        <a href="#"><i class="fa-solid fa-phone"></i></a>
+    </div> -->
+    <div class="contact_info">
+        <h3 class="contact_subtitle">Email</h3>
+        <span class="contact_text">kclaudiahmt@gmail.com</span>
+        <h3 class="contact_subtitle">Phone</h3>
+        <span class="contact_text">1234567890</span>
+        <!-- <h3 class="contact_subtitle">Address</h3>
+        <span class="contact_text">Mysore,Karnataka</span> -->
+    </div>
+    <form action="" class="contact_form" name="google-sheet">
+        <div class="contact_inputs">
+            <input type="text" name="Name" id="" class="contact_input" placeholder="Name">
+            <input type="mail" placeholder="Email" name="Email" class="contact_input">
+        </div>
+        <textarea name="Message" id="" cols="0" rows="10" placeholder="Message"class="contact_input"></textarea>
+        <input type="submit" value="Submit" class="contact_button" >
+    </form>
+    <!-- <span id="msg" style="color: aliceblue;">Message Sent!</span> -->
+</div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <h1 class="footer-title">Claudia</h1>
+        <ul class="list">
+            <li><a href="#home" class="li">About</a></li>
+            <li><a href="#services" class="li">Projects</a></li>
+            <li><a href="#experiece" class="li">Resume</a></li>
+        </ul>
+        <div class="social-icon">
+            <a href="https://www.linkedin.com/in/kichano-claudia-humtsoe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/kichy99" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:kclaudiahmt@gamil.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            <a href="tel:+91-8729892386"><i class="fa-solid fa-phone"></i></a>
+        </div>
+        <p class="copyright">
+            GenZ_Conding | All Right Reserved
+            
+        </p>
+    </div>
+
+    </footer>
+
+    <!-- switch -->
+    <div class="style-switcher">
+        <div class="moon-icons" id="moon">
+            <i class="fas fa-moon"></i>
+        </div>
+        
+    </div>
+
+    <script>
+
+        const modalViews = document.querySelectorAll(".service_modal");
+        const modalBtns = document.querySelectorAll(".service-button");
+        const modalClose = document.querySelectorAll(".service_modal-close");
+        
+        let modal = function (modalClick) {
+          modalViews[modalClick].classList.add("active-modal");
+        };
+        
+        modalBtns.forEach((mb, i) => {
+          mb.addEventListener("click", () => {
+            modal(i);
+          });
+        });
+        modalClose.forEach((mc) => {
+          mc.addEventListener("click", () => {
+            modalViews.forEach((mv) => {
+              mv.classList.remove("active-modal");
+            });
+          });
+        });
+        
+        const aboutmeViews = document.querySelectorAll(".about_me");
+        const aboutmeBtn = document.querySelectorAll(".btn");
+        const aboutmeClose = document.querySelectorAll(".service_modal-close");
+        
+        let about = function (modalClick1) {
+          aboutmeViews[modalClick1].classList.add("active-modal1");
+        };
+        aboutmeBtn.forEach((mb1, i) => {
+          mb1.addEventListener("click", () => {
+            about(i);
+            console.log("clicked");
+          });
+        });
+        aboutmeClose.forEach((mc1) => {
+          mc1.addEventListener("click", () => {
+            aboutmeViews.forEach((mv1) => {
+              mv1.classList.remove("active-modal1");
+            });
+          });
+        });
+        
+        // localStorage and theme change
+        function toggleTheme() {
+          document.body.classList.toggle("light-theme");
+          if (document.body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light-theme");
+          } else {
+            localStorage.removeItem("theme");
+          }
+        }
+        
+        // Check local storage for theme and apply it
+        if (localStorage.getItem("theme") === "light-theme") {
+          document.body.classList.add("light-theme");
+        }
+        
+        // Event listener for theme toggle
+        var icon = document.getElementById("moon");
+        icon.addEventListener("click", toggleTheme);
+        
+        //smallScreenNav
+        let SmallScreen = document.getElementsByClassName('icon-menu')[0];
+        let nav = document.getElementsByClassName('navbar1')[0];
+        let n1 = document.getElementById('n1');
+        let n2 = document.getElementById('n2');
+        let n3 = document.getElementById('n3');
+        let n4 = document.getElementById('n4');
+        let n5 = document.getElementById('n5');
+        let n6 = document.getElementById('n6');
+        
+        
+        SmallScreen.addEventListener('click', ()=>{
+          console.log("done..");
+          SmallScreen.style.visibility = "hidden";
+          nav.style.visibility = "visible" ;
+        } );
+        
+        //for navbar options iterations, hidden , visible
+        const all = [n1,n2,n3,n4,n5,n6];
+        
+        for (let i = 0; i < all.length; i++) {
+          all[i].addEventListener('click', close);
+        }
+        
+        function close(){
+          SmallScreen.style.visibility = "visible";
+          nav.style.visibility = "hidden" ;
+        }
+        
+        //home content
+var hc= document.getElementsByClassName('home-text')[0];
+var hc_button= document.getElementById('btn');
+var closebtn= document.getElementById("close");
+
+function click1(){
+  console.log("1");
+  hc.style.visibility="hidden";
+
+}
+
+closebtn.addEventListener('click',()=>{hc.style.visibility="visible";})
+        
+        
+            </script>
+</body>
+</html>
